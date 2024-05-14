@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Game</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <iframe id="load" src="loading.html" frameborder="0"></iframe>
+    <main class="main" id="main">
+        <nav>
+            
+                <img id="setting" src="img/setting.png" alt="SETTING">
+                <div id="settings-frame" class="sf">
+                    <button id="close-btn">X</button>
+                    <h2>Settings</h2>
+                    <label for="darkModeToggle">Dark Mode:</label>
+                    <input type="checkbox" id="darkModeToggle" class="checkbox">
+                </div>
+                <img id="htp" src="img/how-to-play.png" alt="HOW TO PLAY">
+                <div id="htp-frame" class="htpf">
+                    <button id="close-btn2">X</button>
+                    <h2>How To Play</h2>
+                    <div class="key-colors">
+                        <h2>Key Colors</h2>
+                        <div class="keycolor">
+                            <div class="key inPlace"></div>
+                            <div class="key-text">The letter is correct and in its place</div>
+                        </div>
+                        <div class="keycolor">
+                            <div class="key notPlace"></div>
+                            <div class="key-text">The letter is correct but not in its right place</div>
+                        </div>
+                        <div class="keycolor">
+                            <div class="key wrong"></div>
+                            <div class="key-text">The letter is wrong</div>
+                        </div>
+                    </div>
+                </div>
+        </nav>
+        <h1><span>W</span>ordle Game</h1>
+        <div id="board">
+            <div class="blob"></div>
+        </div>
+        
+        <section class="keyboard">
+            <div class="row row-2">
+                <button type="button" class="action voice" id="voiceButton">
+                    <img src="img/mic.png" alt="voice"/>
+                </button>
+            </div>
+            <div class="row row-1">
+                <button type="button" class="letter letter-a" id="a" value="a">A</button>
+                <button type="button" class="letter letter-z" value="z">Z</button>
+                <button type="button" class="letter letter-e" value="e">E</button>
+                <button type="button" class="letter letter-r" value="r">R</button>
+                <button type="button" class="letter letter-t" value="t">T</button>
+                <button type="button" class="letter letter-y" value="y">Y</button>
+                <button type="button" class="letter letter-u" value="u">U</button>
+                <button type="button" class="letter letter-i" value="i">I</button>
+                <button type="button" class="letter letter-o" value="o">O</button>
+                <button type="button" class="letter letter-p" value="p">P</button>
+            </div>
+
+            <div class="row row-2">
+                <button type="button" class="letter letter-q" value="q">Q</button>
+                <button type="button" class="letter letter-s" value="s">S</button>
+                <button type="button" class="letter letter-d" value="d">D</button>
+                <button type="button" class="letter letter-f" value="f">F</button>
+                <button type="button" class="letter letter-g" value="g">G</button>
+                <button type="button" class="letter letter-h" value="h">H</button>
+                <button type="button" class="letter letter-j" value="j">J</button>
+                <button type="button" class="letter letter-k" value="k">K</button>
+                <button type="button" class="letter letter-l" value="l">L</button>
+                <button type="button" class="letter letter-m" value="m">M</button>
+
+            </div>
+
+            <div class="row row-3">
+                <button type="button" class="action enter" id="enterButton">ENTER</button>
+                <button type="button" class="letter letter-w" value="w">W</button>
+                <button type="button" class="letter letter-x" value="x">X</button>
+                <button type="button" class="letter letter-c" value="c">C</button>
+                <button type="button" class="letter letter-v" value="v">V</button>
+                <button type="button" class="letter letter-b" value="b">B</button>
+                <button type="button" class="letter letter-n" value="n">N</button>
+
+                <button type="button" class="action erase" id="eraseButton">
+                    <img src="img/erase.svg" alt="delete" />
+                </button>
+            </div>
+            
+            
+        </section>
+        <button class="hint"><img src="img/hint.png" alt="hint"><span>2</span></button>
+    </main>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
