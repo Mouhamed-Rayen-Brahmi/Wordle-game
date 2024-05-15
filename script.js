@@ -32,7 +32,7 @@ function generateWords() {
     const { word, date } = JSON.parse(storedData);
     if (date === currentDate) {
       targetWord = word;
-      console.log("Word of the day from local storage:", targetWord);
+      console.log(targetWord);
       main.classList.remove('main');
       loading.classList.add('load');
       return;
@@ -46,7 +46,7 @@ function generateWords() {
         generateWords();
       } else {
         targetWord = newWord.toUpperCase();
-        console.log("Random word selected:", targetWord);
+        console.log(targetWord);
         localStorage.setItem('wordOfTheDay', JSON.stringify({
           word: targetWord,
           date: currentDate,
@@ -68,7 +68,7 @@ function generateWordsoffline() {
     const { word, date } = JSON.parse(storedData);
     if (date === currentDate) {
       targetWord = word;
-      console.log("Word of the day from local storage:", targetWord);
+      console.log(targetWord);
       main.classList.remove('main');
       loading.classList.add('load');
       return;
@@ -90,7 +90,7 @@ function generateWordsoffline() {
       } while (wordList[i].length !== 5);
 
       targetWord = wordList[i].toUpperCase();
-      console.log("Random word selected from XML:", targetWord);
+      console.log(targetWord);
       
       localStorage.setItem('wordOfTheDay', JSON.stringify({
         word: targetWord,
@@ -160,7 +160,7 @@ function intialize() {
 
     if (!gameOver && row == height) {
       gameOver = true;
-      alert("You Lose, the word is :" + targetWord);
+      showCustomAlert("YOU LOSE","You Lose, the word is: " + targetWord);
     }
   });
 
@@ -199,7 +199,7 @@ function intialize() {
 
     if (!gameOver && row == height) {
       gameOver = true;
-      alert("You Lose, the word is: " + targetWord);
+      showCustomAlert("YOU LOSE","You Lose, the word is: " + targetWord);
     }
   });
 
@@ -250,7 +250,7 @@ function checkWord() {
 
     if (correct == width) {
       gameOver = true;
-      alert("You Win!");
+      showCustomAlert("YOU WIN!","You Guess The Word Correct, Good Job!");
     }
   }
 }
@@ -302,11 +302,11 @@ var position = null;
 var c;
 function hint() {
   if (gameOver) {
-    alert("You cant use hint now, Game is Over!");
+    showCustomAlert("ERREUR","You cant use hint now, Game is Over!");
     return;
   }
   if (numberofhints === 0) {
-    alert("You dont have any hint left!");
+    showCustomAlert("ERREUR", "You dont have any hint left!");
     return;
   }
   if (position === null) {
@@ -387,3 +387,19 @@ document.getElementById('htp').addEventListener('click', () => {
   });
 
 });
+
+function showCustomAlert(title, message) {
+  const customAlert = document.getElementById('custom-alert');
+  const alertTitle = customAlert.querySelector('h2');
+  const alertMessage = customAlert.querySelector('p span');
+
+  alertTitle.textContent = title;
+  alertMessage.textContent = message;
+
+  customAlert.classList.add('show');
+}
+function hideCustomAlert() {
+  const customAlert = document.getElementById('custom-alert');
+  customAlert.classList.remove('show');
+}
+document.getElementById('ok-button').addEventListener('click', hideCustomAlert);
