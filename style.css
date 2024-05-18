@@ -1,17 +1,17 @@
 :root {
-    --primary-color: #212121;
-    --secondary-color: #edf2f2;
+    --primary-color: #edf2f2;
+    --secondary-color: #212121;
     --correct-color: #008000;
     --present-color: #ffff00;
     --absent-color: #ff0000;
-    --button-hover-color: #b5b7b9;
-    --keyboard-gray-light: #d3d6da;
-}
-.dark {
-    --primary-color: #edf2f2;
-    --secondary-color: #212121;
     --button-hover-color: #1e1f1f;
     --keyboard-gray-light: #131314;
+}
+.dark {
+    --primary-color: #212121;
+    --secondary-color: #edf2f2;
+    --button-hover-color: #b5b7b9;
+    --keyboard-gray-light: #d3d6da;
   }
   
 nav{
